@@ -91,31 +91,34 @@ var upperCasedCharacters = [
 // Function to prompt user for password options
 function getPasswordOptions() {
   var passLength;
+  var includeUpperCase;
+  var includeLowerCase;
+  var includeNumbers;
+  var includeSpecialChars;
 
-while (passLength >= 129 || passLength <= 7) {
-  passLength = parseInt(prompt('How many charcters would you like? (8-128)'))
-    if (passLength <= 128 || passLength >= 8) {
-        break;
+  do {
+    passLength = prompt("How many characters would you like for your password (8-128)?");
+
+    if (isNaN(passLength) || passLength < 8 || passLength > 128) {
+      alert("Please enter a valid number between 8 and 128.");
     }
-  alert("Password length must be 8 to 128 characters long!");
-}
+  } while (isNaN(passLength) || passLength < 8 || passLength > 128);
 
-  if (confirm('would you like Capital letters?')) {
-     upperCasedCharacters.push()
-  }
-  
-  if (confirm('would you like to include lowercase letters?')) {
-    lowerCasedCharacters.push()
-  }
+  includeUpperCase = confirm("Would you like to include uppercase letters?");
+  includeLowerCase = confirm("Would you like to include lowercase letters?");
+  includeNumbers = confirm("Would you like to include numbers?");
+  includeSpecialChars = confirm("Would you like to include special characters?");
 
-  if (confirm('would you like to include numbers?')) {
-    numericCharacters.push()
-  }
-  
-  if (confirm('would you like to include symbols?')) {
-    specialCharacters.push()
-  }
+  return {
+    length: passLength,
+    upperCase: includeUpperCase,
+    lowerCase: includeLowerCase,
+    numbers: includeNumbers,
+    specialChars: includeSpecialChars
+  };
+
 }
+console.log(getPasswordOptions());
 
 // Function for getting a random element from an array
 function getRandom(arr) {
