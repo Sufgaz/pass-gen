@@ -122,8 +122,17 @@ console.log(getPasswordOptions());
 
 // Function for getting a random element from an array
 function getRandom(arr) {
+  var arr = (
+    upperCase = upperCasedCharacters,
+    lowerCase = lowerCasedCharacters,
+    specialChars = specialCharacters,
+    numbers = numericCharacters
+    );
 
+  var randomIndex = Math.floor(Math.random() * arr.length);
+  return arr[randomIndex];
 }
+console.log(getRandom());
 
 // Function to generate password with user input
 function generatePassword() {
