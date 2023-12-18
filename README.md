@@ -76,4 +76,8 @@ You are required to submit the following for review:
 
 ---
 
+![picture-of-code](./assets/code.PNG)
+![picture-of-site](./assets/main-webpage.PNG)
+![picture-of-console-log](./assets/console-log.PNG)
+
 © 2023 edX Boot Camps LLC. Confidential and Proprietary. All Rights Reserved.
